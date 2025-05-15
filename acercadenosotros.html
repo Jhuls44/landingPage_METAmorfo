@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Acerca de Nosotros | METAmorfo DIGITAL</title>
   <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="https://use.typekit.net/[TU-ID-DE-KIT].css">
   <script>
     tailwind.config = {
       theme: {
@@ -17,6 +17,15 @@
             pink: '#DE3CB2',
             orange: '#FE9C3A',
             dark: '#0F0F1D'
+          },
+          animation: {
+            gradient: 'gradient 12s ease infinite',
+          },
+          keyframes: {
+            gradient: {
+              '0%, 100%': { 'background-position': '0% 50%' },
+              '50%': { 'background-position': '100% 50%' },
+            }
           }
         }
       }
@@ -24,6 +33,15 @@
   </script>
   
   <style type="text/tailwindcss">
+    @font-face {
+      font-family: 'Myriad Pro';
+      src: local('Myriad Pro Regular'), local('MyriadPro-Regular'),
+           url('ruta/a/myriad-pro-regular.woff2') format('woff2'),
+           url('ruta/a/myriad-pro-regular.woff') format('woff');
+      font-weight: normal;
+      font-style: normal;
+    }
+    
     @layer utilities {
       .architectural-bar {
         position: relative;
@@ -36,25 +54,63 @@
         left: 0;
         width: 100%;
         max-width: 450px;
-        background: linear-gradient(to bottom, #16A0E4, #6835D4, #DE3CB2);
+        background: linear-gradient(to bottom, #0F0F1D,#1E1E3F,#3B3B58);
         z-index: 0;
       }
       .content-card {
-        border-left: 4px solid;
-        background: white;
-        box-shadow: 4px 4px 0 rgba(0,0,0,0.1);
+        @apply bg-white p-8 rounded-2xl shadow-lg;
+        transition: all 0.3s ease;
+      }
+      .content-card:hover {
+        @apply shadow-xl;
+        transform: translateY(-4px);
       }
       .image-container {
         width: 100%;
         height: 0;
-        padding-bottom: 125%; /* Relación 4:5 */
+        padding-bottom: 125%;
         position: relative;
+        overflow: hidden;
       }
       .image-container img {
         position: absolute;
         width: 100%;
         height: 100%;
         object-fit: cover;
+      }
+      .image-container::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: linear-gradient(45deg, 
+          rgba(22, 160, 228, 0.4), 
+          rgba(43, 122, 224, 0.4), 
+          rgba(104, 53, 212, 0.4), 
+          rgba(222, 60, 178, 0.4));
+        background-size: 400% 400%;
+        animation: gradient 12s ease infinite;
+        mix-blend-mode: overlay;
+        z-index: 1;
+      }
+      
+      /* Responsive styles */
+      @media (max-width: 768px) {
+        .architectural-bar::before {
+          max-width: 100%;
+          height: 300px;
+          top: auto;
+          bottom: 0;
+        }
+        .flex-col.md\:flex-row {
+          flex-direction: column;
+        }
+        .w-full.md\:w-2\/5 {
+          width: 100%;
+          padding-bottom: 0;
+        }
       }
     }
   </style>
@@ -81,7 +137,7 @@
           <div class="w-full md:w-2/5 lg:w-[450px] pt-8 pb-12 md:py-12 pr-0 md:pr-8 flex items-center relative z-10">
             <div class="w-full shadow-2xl">
               <div class="image-container">
-                <img src="https://images.pexels.com/photos/2387877/pexels-photo-2387877.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" 
+                <img src="https://images.pexels.com/photos/18780585/pexels-photo-18780585/free-photo-of-noche-espacio-efecto-desenfocado-galaxy.jpeg?auto=compress&cs=tinysrgb&w=600" 
                      alt="Universo digital">
               </div>
             </div>
@@ -90,17 +146,17 @@
           <!-- Columna derecha (contenido) -->
           <div class="w-full md:w-3/5 lg:w-[calc(100%-450px)] py-8 md:py-12 pl-0 md:pl-8 relative z-10 flex items-center">
             <div class="w-full">
-              <h1 class="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-800  pb-4 mb-6 md:mb-8">
+              <h1 class="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-800 pb-4 mb-6 md:mb-8" style="font-family: 'Myriad Pro', sans-serif">
                 Servicio, enseñanza y resultados
               </h1>
               
               <!-- Misión -->
-              <div class="content-card border-blue1 p-6 mb-6">
+              <div class="content-card border-l-blue1 p-8 mb-8">
                 <div class="flex items-center mb-3">
                   <div class="bg-blue1 text-white p-2 rounded-full mr-4">
                     <i class="fas fa-bullseye"></i>
                   </div>
-                  <h2 class="text-xl md:text-2xl font-bold text-gray-800">MISIÓN</h2>
+                  <h2 class="text-xl md:text-2xl font-bold text-gray-800">Misión</h2>
                 </div>
                 <p class="text-gray-600 pl-14 md:pl-16 text-base md:text-lg">
                   Acompañamos a marcas y personas en su transformación digital, rescatando su esencia para convertirla en innovación competitiva.
@@ -108,12 +164,12 @@
               </div>
               
               <!-- Visión -->
-              <div class="content-card border-purple p-6">
+              <div class="content-card border-l-purple p-8">
                 <div class="flex items-center mb-3">
                   <div class="bg-purple text-white p-2 rounded-full mr-4">
                     <i class="fas fa-eye"></i>
                   </div>
-                  <h2 class="text-xl md:text-2xl font-bold text-gray-800">VISIÓN</h2>
+                  <h2 class="text-xl md:text-2xl font-bold text-gray-800">Visión</h2>
                 </div>
                 <p class="text-gray-600 pl-14 md:pl-16 text-base md:text-lg">
                   Transformamos el presente honrando la autenticidad de cada proyecto, fusionando innovación tecnológica con esencia cultural latinoamericana.
