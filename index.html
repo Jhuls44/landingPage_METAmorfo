@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>METAmorfo DIGITAL</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            blue1: '#16A0E4',
+            blue2: '#2C7AE0',
+            purple: '#6835D4',
+            pink: '#DE3CB2',
+            orange: '#FE9C3A',
+          },
+          animation: {
+            gradient: 'gradient 12s ease infinite',
+          },
+          keyframes: {
+            gradient: {
+              '0%, 100%': { 'background-position': '0% 50%' },
+              '50%': { 'background-position': '100% 50%' },
+            },
+          }
+        }
+      }
+    }
+  </script>
+  
+  <style type="text/tailwindcss">
+    @layer utilities {
+      .bg-gradient-animated {
+        background: linear-gradient(45deg, #0F0F1D,#1E1E3F,#3B3B58);
+        background-size: 300% 300%;
+      }
+      .service-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+      }
+    }
+  </style>
+</head>
+<body class="font-sans">
+  <!-- Navbar con logo más grande -->
+  <nav class="w-full bg-black flex justify-between items-center px-6 py-5 shadow-lg">
+    <img src="logo/logometamorfo.png" alt="METAmorfo DIGITAL" class="h-20 md:h-22 ml-4">
+    <div class="hidden md:flex space-x-8 mr-6">
+      <a href="./acercadenosotros.html" class="text-white hover:text-blue1 transition text-lg md:text-x0">Acerca de nosotros</a>
+    </div>
+    <button class="md:hidden text-3xl text-white mr-4">
+      <i class="fas fa-bars"></i>
+    </button>
+  </nav>
+
+  <!-- Hero section con logo principal más grande -->
+  <section class="min-h-screen flex items-center justify-center bg-gradient-animated animate-gradient relative overflow-hidden pt-20">
+    <div class="container mx-auto px-4 text-center">
+      <img src="logo/Logo1.png" alt="METAmorfo DIGITAL" class="mx-auto w-full max-w-2xl md:max-w-3xl opacity-90 mb-10">
+      <div class="max-w-3xl mx-auto">
+        <p class="text-2xl md:text-3xl text-white italic mb-6">
+          "Servicio, enseñanza y resultados"
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sección de servicios con textos más grandes -->
+  <section class="py-24 bg-white">
+    <div class="container mx-auto px-4">
+      <h2 class="text-5xl font-bold text-center mb-20 text-gray-800">Servicios</h2>
+      
+      <!-- Servicio 1: Webmorph -->
+      <div class="grid md:grid-cols-2 gap-14 items-center mb-28">
+        <div class="service-card bg-gray-50 p-10 rounded-2xl transition duration-300">
+          <h3 class="text-4xl font-bold text-blue2 mb-6">Desarrollo web</h3>
+          <ul class="space-y-4 text-gray-600 text-lg">
+            <li class="flex items-start">
+              <i class="fas fa-check text-blue2 mt-1 mr-3 text-xl"></i>
+              <span>Desarrollo de sitios web responsivos (desktop, móvil, PWA)</span>
+            </li>
+            <li class="flex items-start">
+              <i class="fas fa-check text-blue2 mt-1 mr-3 text-xl"></i>
+              <span>Integración CMS (WordPress, Strapi)</span>
+            </li>
+            <li class="flex items-start">
+              <i class="fas fa-check text-blue2 mt-1 mr-3 text-xl"></i>
+              <span>SEO on-page y analítica integrada</span>
+            </li>
+            <li class="flex items-start">
+              <i class="fas fa-check text-blue2 mt-1 mr-3 text-xl"></i>
+              <span>Conexión nativa con CRM y automatización de leads</span>
+            </li>
+          </ul>
+        </div>
+        <div>
+          <img src="https://images.pexels.com/photos/326501/pexels-photo-326501.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" 
+               alt="Webmorph" 
+               class="w-full h-auto rounded-2xl shadow-xl">
+        </div>
+      </div>
+
+      <!-- Servicio 2: 3Dmorph -->
+      <div class="grid md:grid-cols-2 gap-14 items-center mb-28">
+        <div class="order-1 md:order-2 service-card bg-gray-50 p-10 rounded-2xl transition duration-300">
+          <h3 class="text-4xl font-bold text-purple mb-6">3D</h3>
+          <ul class="space-y-4 text-gray-600 text-lg">
+            <li class="flex items-start">
+              <i class="fas fa-check text-purple mt-1 mr-3 text-xl"></i>
+              <span>Modelado 3D (Blender, Rhino) y renders fotorealistas</span>
+            </li>
+            <li class="flex items-start">
+              <i class="fas fa-check text-purple mt-1 mr-3 text-xl"></i>
+              <span>Impresión 3D (DFM, SLA) de prototipos y piezas finales</span>
+            </li>
+            <li class="flex items-start">
+              <i class="fas fa-check text-purple mt-1 mr-3 text-xl"></i>
+              <span>Post procesado, lijado, pintado y ensamblaje</span>
+            </li>
+          </ul>
+        </div>
+        <div class="order-2 md:order-1">
+          <img src="https://img.freepik.com/foto-gratis/estilo-vida-disenador-usando-impresora-3d_23-2151019889.jpg?semt=ais_hybrid&w=740" 
+               alt="3Dmorph" 
+               class="w-full h-auto rounded-2xl shadow-xl">
+        </div>
+      </div>
+
+      <!-- Servicio 3: Brandmorph -->
+      <div class="grid md:grid-cols-2 gap-14 items-center mb-28">
+        <div class="service-card bg-gray-50 p-10 rounded-2xl transition duration-300">
+          <h3 class="text-4xl font-bold text-pink mb-6">Branding</h3>
+          <ul class="space-y-4 text-gray-600 text-lg">
+            <li class="flex items-start">
+              <i class="fas fa-check text-pink mt-1 mr-3 text-xl"></i>
+              <span>Desarrollo de identidad visual y manual de marca</span>
+            </li>
+            <li class="flex items-start">
+              <i class="fas fa-check text-pink mt-1 mr-3 text-xl"></i>
+              <span>Diseño UX/UI para webs y apps</span>
+            </li>
+            <li class="flex items-start">
+              <i class="fas fa-check text-pink mt-1 mr-3 text-xl"></i>
+              <span>Planillas de material gráfico (redes, papelería digital)</span>
+            </li>
+            <li class="flex items-start">
+              <i class="fas fa-check text-pink mt-1 mr-3 text-xl"></i>
+              <span>Mockups interactivos en Figma con componentes reutilizables</span>
+            </li>
+          </ul>
+        </div>
+        <div>
+          <img src="https://img.freepik.com/foto-gratis/naturaleza-muerta-estudio-diseno-grafico_23-2151320718.jpg?semt=ais_hybrid&w=740" 
+               alt="Brandmorph" 
+               class="w-full h-auto rounded-2xl shadow-xl">
+        </div>
+      </div>
+
+      <!-- Servicio 4: Automorph -->
+      <div class="grid md:grid-cols-2 gap-14 items-center mb-28">
+        <div class="order-1 md:order-2 service-card bg-gray-50 p-10 rounded-2xl transition duration-300">
+          <h3 class="text-4xl font-bold text-orange mb-6">Automatización de procesos</h3>
+          <ul class="space-y-4 text-gray-600 text-lg">
+            <li class="flex items-start">
+              <i class="fas fa-check text-orange mt-1 mr-3 text-xl"></i>
+              <span>Implementación de CRMs (HubSpot, Zoho) y ERPs ligeros</span>
+            </li>
+            <li class="flex items-start">
+              <i class="fas fa-check text-orange mt-1 mr-3 text-xl"></i>
+              <span>Creación y despliegue de chatbots (WhatsApp, web)</span>
+            </li>
+            <li class="flex items-start">
+              <i class="fas fa-check text-orange mt-1 mr-3 text-xl"></i>
+              <span>Flujos automatizados de marketing (email, SMS, notificaciones)</span>
+            </li>
+            <li class="flex items-start">
+              <i class="fas fa-check text-orange mt-1 mr-3 text-xl"></i>
+              <span>Dashboards personalizados con métricas clave</span>
+            </li>
+          </ul>
+        </div>
+        <div class="order-2 md:order-1">
+          <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" 
+               alt="Automorf" 
+               class="w-full h-auto rounded-2xl shadow-xl">
+        </div>
+      </div>
+
+      <!-- Servicio 5: Medianorph -->
+      <div class="grid md:grid-cols-2 gap-14 items-center mb-28">
+        <div class="service-card bg-gray-50 p-10 rounded-2xl transition duration-300">
+          <h3 class="text-4xl font-bold text-blue1 mb-6">Producción multimedia</h3>
+          <ul class="space-y-4 text-gray-600 text-lg">
+            <li class="flex items-start">
+              <i class="fas fa-check text-blue1 mt-1 mr-3 text-xl"></i>
+              <span>Producción de videos corporativos y publicitarios (hasta 4k)</span>
+            </li>
+            <li class="flex items-start">
+              <i class="fas fa-check text-blue1 mt-1 mr-3 text-xl"></i>
+              <span>Animación 2D/3D y motion graphics</span>
+            </li>
+            <li class="flex items-start">
+              <i class="fas fa-check text-blue1 mt-1 mr-3 text-xl"></i>
+              <span>Fotografía de producto y lifestyle</span>
+            </li>
+            <li class="flex items-start">
+              <i class="fas fa-check text-blue1 mt-1 mr-3 text-xl"></i>
+              <span>Integración de renders 3D en piezas audiovisuales</span>
+            </li>
+          </ul>
+        </div>
+        <div>
+          <img src="https://images.pexels.com/photos/5054208/pexels-photo-5054208.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" 
+               alt="Medianorph" 
+               class="w-full h-auto rounded-2xl shadow-xl">
+        </div>
+      </div>
+
+      <!-- Servicio 6: Cursos -->
+      <div class="grid md:grid-cols-2 gap-14 items-center">
+        <div class="order-1 md:order-2 service-card bg-gray-50 p-10 rounded-2xl transition duration-300">
+          <h3 class="text-4xl font-bold text-pink mb-6">Cursos y Talleres</h3>
+          <ul class="space-y-4 text-gray-600 text-lg">
+            <li class="flex items-start">
+              <i class="fas fa-check text-pink mt-1 mr-3 text-xl"></i>
+              <span>Cursos online/presenciales en Web, 3D y automatización</span>
+            </li>
+            <li class="flex items-start">
+              <i class="fas fa-check text-pink mt-1 mr-3 text-xl"></i>
+              <span>Plataforma e-learning con video, quizzes y foros</span>
+            </li>
+            <li class="flex items-start">
+              <i class="fas fa-check text-pink mt-1 mr-3 text-xl"></i>
+              <span>Certificación interna con aval de Metamorfo Digital</span>
+            </li>
+            <li class="flex items-start">
+              <i class="fas fa-check text-pink mt-1 mr-3 text-xl"></i>
+              <span>Acceso a sandbox de prácticas y mentorías post-curso</span>
+            </li>
+          </ul>
+        </div>
+        <div class="order-2 md:order-1">
+          <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1471&q=80" 
+               alt="Cursos" 
+               class="w-full h-auto rounded-2xl shadow-xl">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer con textos más grandes -->
+  <footer class="bg-gray-900 py-16">
+    <div class="container mx-auto px-4">
+      <div class="grid md:grid-cols-3 gap-10">
+        <div>
+          <h3 class="text-2xl font-bold text-white mb-6">Enlaces rápidos</h3>
+          <ul class="space-y-3">
+            <li><a href="#" class="text-gray-400 hover:text-white transition text-lg">Inicio</a></li>
+            <li><a href="#" class="text-gray-400 hover:text-white transition text-lg">Acerca de Nosotros</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="text-2xl font-bold text-white mb-6">Contacto</h3>
+          <p class="text-gray-400 text-lg"><i class="fas fa-envelope mr-2"></i>metamorfodgtl@gmail.com</p>
+          <p class="text-gray-400 text-lg"><i class="fas fa-phone mr-2"></i>+591 75480182</p>
+          <div class="flex space-x-5 mt-6">
+            <a href="#" class="text-gray-400 hover:text-white transition text-2xl"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" class="text-gray-400 hover:text-white transition text-2xl"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="text-gray-400 hover:text-white transition text-2xl"><i class="fab fa-linkedin-in"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="border-t border-gray-800 mt-12 pt-8 text-center">
+        <p class="text-gray-400 text-lg">© 2025 METAmorfo DIGITAL. Todos los derechos reservados.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Script para menú móvil -->
+  <script>
+    const mobileMenuButton = document.querySelector('.md\\:hidden');
+    const mobileMenu = document.createElement('div');
+    mobileMenu.className = 'fixed inset-0 bg-black bg-opacity-90 z-50 hidden flex flex-col items-center justify-center';
+    mobileMenu.innerHTML = `
+      <button class="absolute top-6 right-6 text-4xl text-white">
+        <i class="fas fa-times"></i>
+      </button>
+      <div class="text-center space-y-10">
+        <a href="#" class="block text-3xl text-white hover:text-blue1 transition">Inicio</a>
+        <a href="#" class="block text-3xl text-white hover:text-blue1 transition">Acerca</a>
+        <a href="#" class="block text-3xl text-white hover:text-blue1 transition">Contacto</a>
+      </div>
+    `;
+    document.body.appendChild(mobileMenu);
+
+    mobileMenuButton.addEventListener('click', function() {
+      mobileMenu.classList.remove('hidden');
+      mobileMenu.classList.add('flex');
+    });
+
+    mobileMenu.querySelector('button').addEventListener('click', function() {
+      mobileMenu.classList.add('hidden');
+      mobileMenu.classList.remove('flex');
+    });
+  </script>
+</body>
+</html>

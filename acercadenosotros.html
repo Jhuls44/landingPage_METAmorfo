@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Acerca de Nosotros | METAmorfo DIGITAL</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            blue1: '#16A0E4',
+            blue2: '#2C7AE0',
+            purple: '#6835D4',
+            pink: '#DE3CB2',
+            orange: '#FE9C3A',
+            dark: '#0F0F1D'
+          }
+        }
+      }
+    }
+  </script>
+  
+  <style type="text/tailwindcss">
+    @layer utilities {
+      .architectural-bar {
+        position: relative;
+      }
+      .architectural-bar::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        max-width: 450px;
+        background: linear-gradient(to bottom, #16A0E4, #6835D4, #DE3CB2);
+        z-index: 0;
+      }
+      .content-card {
+        border-left: 4px solid;
+        background: white;
+        box-shadow: 4px 4px 0 rgba(0,0,0,0.1);
+      }
+      .image-container {
+        width: 100%;
+        height: 0;
+        padding-bottom: 125%; /* Relación 4:5 */
+        position: relative;
+      }
+      .image-container img {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+  </style>
+</head>
+<body class="font-sans bg-white">
+  <!-- Navbar -->
+  <nav class="w-full bg-black flex justify-between items-center px-6 py-5 relative z-10">
+    <img src="logo/logometamorfo.png" alt="METAmorfo DIGITAL" class="h-20 md:h-22 ml-4">
+    <div class="hidden md:flex space-x-8 mr-6">
+      <a href="index.html" class="text-white hover:text-blue1 transition text-lg md:text-x0">Inicio</a>
+      <a href="#" class="text-blue1 transition text-lg md:text-x0">Acerca de nosotros</a>
+    </div>
+    <button class="md:hidden text-3xl text-white mr-4">
+      <i class="fas fa-bars"></i>
+    </button>
+  </nav>
+
+  <!-- Contenido principal -->
+  <main class="relative min-h-[calc(100vh-160px)] flex items-center">
+    <div class="architectural-bar w-full h-full">
+      <div class="container mx-auto px-4 h-full">
+        <div class="flex flex-col md:flex-row h-full">
+          <!-- Columna izquierda (imagen) -->
+          <div class="w-full md:w-2/5 lg:w-[450px] pt-8 pb-12 md:py-12 pr-0 md:pr-8 flex items-center relative z-10">
+            <div class="w-full shadow-2xl">
+              <div class="image-container">
+                <img src="https://images.pexels.com/photos/2387877/pexels-photo-2387877.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" 
+                     alt="Universo digital">
+              </div>
+            </div>
+          </div>
+          
+          <!-- Columna derecha (contenido) -->
+          <div class="w-full md:w-3/5 lg:w-[calc(100%-450px)] py-8 md:py-12 pl-0 md:pl-8 relative z-10 flex items-center">
+            <div class="w-full">
+              <h1 class="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-800  pb-4 mb-6 md:mb-8">
+                Servicio, enseñanza y resultados
+              </h1>
+              
+              <!-- Misión -->
+              <div class="content-card border-blue1 p-6 mb-6">
+                <div class="flex items-center mb-3">
+                  <div class="bg-blue1 text-white p-2 rounded-full mr-4">
+                    <i class="fas fa-bullseye"></i>
+                  </div>
+                  <h2 class="text-xl md:text-2xl font-bold text-gray-800">MISIÓN</h2>
+                </div>
+                <p class="text-gray-600 pl-14 md:pl-16 text-base md:text-lg">
+                  Acompañamos a marcas y personas en su transformación digital, rescatando su esencia para convertirla en innovación competitiva.
+                </p>
+              </div>
+              
+              <!-- Visión -->
+              <div class="content-card border-purple p-6">
+                <div class="flex items-center mb-3">
+                  <div class="bg-purple text-white p-2 rounded-full mr-4">
+                    <i class="fas fa-eye"></i>
+                  </div>
+                  <h2 class="text-xl md:text-2xl font-bold text-gray-800">VISIÓN</h2>
+                </div>
+                <p class="text-gray-600 pl-14 md:pl-16 text-base md:text-lg">
+                  Transformamos el presente honrando la autenticidad de cada proyecto, fusionando innovación tecnológica con esencia cultural latinoamericana.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-gray-900 py-16 relative z-10">
+    <div class="container mx-auto px-4">
+      <div class="grid md:grid-cols-3 gap-10">
+        <div>
+          <h3 class="text-2xl font-bold text-white mb-6">Enlaces rápidos</h3>
+          <ul class="space-y-3">
+            <li><a href="index.html" class="text-gray-400 hover:text-white transition text-lg">Inicio</a></li>
+            <li><a href="#" class="text-gray-400 hover:text-white transition text-lg">Acerca de Nosotros</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="text-2xl font-bold text-white mb-6">Contacto</h3>
+          <p class="text-gray-400 text-lg"><i class="fas fa-envelope mr-2"></i>metamorfodgtl@gmail.com</p>
+          <p class="text-gray-400 text-lg"><i class="fas fa-phone mr-2"></i>+591 75480182</p>
+          <div class="flex space-x-5 mt-6">
+            <a href="#" class="text-gray-400 hover:text-white transition text-2xl"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" class="text-gray-400 hover:text-white transition text-2xl"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="text-gray-400 hover:text-white transition text-2xl"><i class="fab fa-linkedin-in"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="border-t border-gray-800 mt-12 pt-8 text-center">
+        <p class="text-gray-400 text-lg">© 2025 METAmorfo DIGITAL. Todos los derechos reservados.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Script para menú móvil -->
+  <script>
+    const mobileMenuButton = document.querySelector('.md\\:hidden');
+    const mobileMenu = document.createElement('div');
+    mobileMenu.className = 'fixed inset-0 bg-black bg-opacity-90 z-50 hidden flex flex-col items-center justify-center';
+    mobileMenu.innerHTML = `
+      <button class="absolute top-6 right-6 text-4xl text-white">
+        <i class="fas fa-times"></i>
+      </button>
+      <div class="text-center space-y-10">
+        <a href="index.html" class="block text-3xl text-white hover:text-blue1 transition">Inicio</a>
+        <a href="#" class="block text-3xl text-blue1 transition">Acerca de Nosotros</a>
+      </div>
+    `;
+    document.body.appendChild(mobileMenu);
+
+    mobileMenuButton.addEventListener('click', function() {
+      mobileMenu.classList.remove('hidden');
+      mobileMenu.classList.add('flex');
+    });
+
+    mobileMenu.querySelector('button').addEventListener('click', function() {
+      mobileMenu.classList.add('hidden');
+      mobileMenu.classList.remove('flex');
+    });
+  </script>
+</body>
+</html>
